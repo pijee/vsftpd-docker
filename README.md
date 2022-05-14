@@ -9,9 +9,10 @@ There is no guess, no public view and no anonymous. It use TLS to encrypt commun
 It's an update [from this project](https://github.com/fauria/docker-vsftpd) with [this article](https://docs.rockylinux.org/guides/file_sharing/secure_ftp_server_vsftpd/).
 
 To get the user/pass, use docker logs.
-|Encryption|Users Accounts|Passive Ports|Max clients|
-|----------|-----------|----------------|-----------|
-|RSA 4096 bits|1|21000 to 21100|100|
+|Encryption|Passive Ports|Max clients|
+|----------|----------------|-----------|
+|RSA 4096 bits|21000 to 21100|100|
+
 
 >Run a container for example :
 ```bash
