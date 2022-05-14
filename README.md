@@ -14,12 +14,12 @@ To get the user/pass, use docker logs.
 |RSA 4096 bits|21000 to 21100|100|/home/vsftpd|
 
 
->Run a container for example :
+Run a container for example :
 ```bash
 $ docker run -it --name ftp --rm -p 20-22:20-22 -p 990:990 -p 21000-21100:21000-21100 -v [local_dir]:/home/vsftpd image:tag
 ```
 
->You will get somthing like this :
+You will get somthing like this :
 ```
 addgroup: group 'nogroup' in use
 chpasswd: password for 'tpronf' changed
