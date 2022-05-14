@@ -10,10 +10,13 @@ It's an update [from this project](https://github.com/fauria/docker-vsftpd) with
 
 To get the user/pass, use docker logs.
 
-Run a container for example : ```
+>Run a container for example :
+```bash
 $ docker run -it --name ftp --rm -p 20-22:20-22 -p 990:990 -p 21000-21100:21000-21100 -v [local_dir]:[remote_dir] image:tag
 ```
-You will get somthing like this : ```
+
+>You will get somthing like this :
+```bash
 addgroup: group 'nogroup' in use
 chpasswd: password for 'tpronf' changed
 Generating a RSA private key
