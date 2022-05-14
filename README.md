@@ -35,3 +35,9 @@ Have a good day !
 ```
 
 If you use `-d` option, use `docker logs [container_name]` to get user/pass.
+
+# Official release
+> To get pre-build online version :
+```bash
+$ docker pull pijee/vsftpd:latest
+```
