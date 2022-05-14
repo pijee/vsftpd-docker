@@ -42,6 +42,10 @@ You can bind 2 folders between container and host :
 - `/home/vsftpd` for files
 - `/var/log/vsftpd` for logs
 
+### Be Careful !
+The container has all rights on the files folder shared (*chrooted for security*). Users who have login/password can upload, create and delete all contents in it. Anonymous can't connect obviously.
+
+**Do not use this container to share readonly/public content !!**
 
 # Arguments
 In *passive mode*, vsftpd need sometimes an external IP to deal with. For that, use `PASV_ADDRESS` env.
