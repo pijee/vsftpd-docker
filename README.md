@@ -9,14 +9,14 @@ There is no guess, no public view and no anonymous. It use TLS to encrypt commun
 It's an update [from this project](https://github.com/fauria/docker-vsftpd) with [this article](https://docs.rockylinux.org/guides/file_sharing/secure_ftp_server_vsftpd/).
 
 To get the user/pass, use docker logs.
-|Encryption|Passive Ports|Max clients|
-|----------|----------------|-----------|
-|RSA 4096 bits|21000 to 21100|100|
+|Encryption|Passive Ports|Max clients|Remote Dir|
+|----------|-------------|-----------|----------|
+|RSA 4096 bits|21000 to 21100|100|/home/vsftpd|
 
 
 >Run a container for example :
 ```bash
-$ docker run -it --name ftp --rm -p 20-22:20-22 -p 990:990 -p 21000-21100:21000-21100 -v [local_dir]:[remote_dir] image:tag
+$ docker run -it --name ftp --rm -p 20-22:20-22 -p 990:990 -p 21000-21100:21000-21100 -v [local_dir]:/home/vsftpd image:tag
 ```
 
 >You will get somthing like this :
@@ -37,7 +37,7 @@ Have a good day !
 If you use `-d` option, use `docker logs [container_name]` to get user/pass.
 
 # Official release
-> To get pre-build online version :
+To get pre-build online version :
 ```bash
 $ docker pull pijee/vsftpd:latest
 ```
