@@ -1,4 +1,4 @@
-## Docker image for configured vsftpd
+# Docker image for configured vsftpd
 I made this image for people who, like me, needs a fast way to deploy a small ftp server.
 Each time you start a container, a small script inside generate a random user/password, create user account, apply password and make a new cert from openssl.
 
@@ -9,9 +9,9 @@ There is no guess, no public view and no anonymous. It use TLS to encrypt commun
 It's an update [from this project](https://github.com/fauria/docker-vsftpd) with [this article](https://docs.rockylinux.org/guides/file_sharing/secure_ftp_server_vsftpd/).
 
 To get the user/pass, use docker logs.
-|Encryption|Passive Ports|Max clients|Remote Dir|
-|----------|-------------|-----------|----------|
-|RSA 4096 bits|21000 to 21100|100|/home/vsftpd|
+|Encryption|Passive Ports|Max clients|
+|----------|-------------|-----------|
+|RSA 4096 bits|21000 to 21100|100|
 
 
 Run a container for example :
@@ -35,6 +35,20 @@ Have a good day !
 ```
 
 If you use `-d` option, use `docker logs [container_name]` to get user/pass.
+
+
+# Binds
+You can bind 2 folders between container and host :
+- `/home/vsftpd` for files
+- `/var/log/vsftpd` for logs
+
+
+# Arguments
+In *passive mode*, vsftpd need sometimes an external IP to deal with. For that, use `PASV_ADDRESS` env.
+With command line, use `-e "PASV_ADDRESS=X.X.X.X"`
+```bash
+$ docker run -e "PASV_ADDRESS=1.2.3.4" image:tag
+```
 
 # Official release
 To get pre-build online version :
