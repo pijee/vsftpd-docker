@@ -11,7 +11,7 @@ It's an update [from this project](https://github.com/lhauspie/docker-vsftpd-alp
 To get the user/pass, use docker logs.
 |Encryption|Passive Ports|Max clients|
 |----------|-------------|-----------|
-|RSA 2048 bits|21000 to 21100|100|
+|RSA 4096 bits|21000 to 21100|100|
 
 
 Run a container for example :
