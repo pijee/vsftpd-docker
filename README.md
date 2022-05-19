@@ -6,12 +6,12 @@ It's a very easy way to share temporarly one directory on your server. **Do not 
 
 There is no guess, no public view and no anonymous. It use TLS to encrypt communications.
 
-It's an update [from this project](https://github.com/fauria/docker-vsftpd) with [this article](https://docs.rockylinux.org/guides/file_sharing/secure_ftp_server_vsftpd/).
+It's an update [from this project](https://github.com/lhauspie/docker-vsftpd-alpine) with [this article](https://docs.rockylinux.org/guides/file_sharing/secure_ftp_server_vsftpd/).
 
 To get the user/pass, use docker logs.
 |Encryption|Passive Ports|Max clients|
 |----------|-------------|-----------|
-|RSA 4096 bits|21000 to 21100|100|
+|RSA 2048 bits|21000 to 21100|100|
 
 
 Run a container for example :
